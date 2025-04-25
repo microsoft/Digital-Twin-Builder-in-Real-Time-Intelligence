@@ -93,12 +93,12 @@ Next, run the rest of the notebook code to generate the Eventhouse projection sc
 
     ![Screenshot of running the third code block.](media/notebook-run-3.png)
 
-    >[!TIP]
+    > [!TIP]
     > If you see a *ModuleNotFoundError*, try rerunning the first code block with the package installation, and then rerun this code block.
 
 4. Run the last code block. This runs a Python snippet that sends your script to the Fabric REST API and executes it against your KQL database. The notebook confirms the successful run status with a checkmark underneath the code, and confirmation that it successfully created the Eventhouse domain projection functions.
 
-    !![Screenshot of running the fourth code block.](media/notebook-run-4.png)
+    ![Screenshot of running the fourth code block.](media/notebook-run-4.png)
 
 Now the projection functions are created in Eventhouse, one for each digital twin builder entity and its property types.
 

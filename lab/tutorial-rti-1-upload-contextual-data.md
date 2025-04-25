@@ -26,13 +26,12 @@ In this section, you upload a static file of bus stop data to the Tutorial lakeh
 4. In the **Explorer panel** on the left, select **Files**. Hover over the file name and select the ... that appears. Then select **Load to Tables** and **New table**.
 
     ![Screenshot of Microsoft Fabric, selecting the Load to Tables option.](media/prep-new-table.png)
-    :::image type="content" source="media/tutorial-rti/prep-new-table.png" alt-text="Screenshot of Microsoft Fabric, selecting the Load to Tables option.":::
 
 5. Name the table *stops_data*. Leave the other default settings and select **Load**.
 
 6. When the table is created, review your new *stops_data* table and verify that it contains data.
 
-    :::image type="content" source="media/tutorial-rti/prep-stops-data.png" alt-text="Screenshot of the stops_data table with data.":::
+    ![Screenshot of the stops_data table with data.](media/prep-stops-data.png)
 
 ## Next step
 

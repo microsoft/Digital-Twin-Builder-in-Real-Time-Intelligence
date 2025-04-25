@@ -180,7 +180,7 @@ As a final step, confirm that all your data mappings ran successfully.
 
     ![Screenshot of four completed operations.](media/manage-operations-2.png)
 
-    >[!TIP]
+    > [!TIP]
     > If any of the operations failed, check the box next to its name and select **Run now** to rerun it.
 
 In the next part of the lab, you project the ontology you created to an eventhouse, to support further data analysis and visualization.

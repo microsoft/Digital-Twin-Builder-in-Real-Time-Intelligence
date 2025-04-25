@@ -73,3 +73,27 @@ In this tutorial, you complete the following steps to build out the bus data sce
 - Create KQL queries and a Real-Time Dashboard to explore and visualize the data
 
 > Select **Next >** to go to the first exercise.
+
+===
+
+!INSTRUCTIONS [Digital twin builder in Real-Time Intelligence tutorial part 1: Upload contextual data](https://raw.githubusercontent.com/microsoft/Digital-twin-builder-in-Real-Time-Intelligence/main/lab/tutorial-rti-1-upload-contextual-data.md)
+
+===
+
+!INSTRUCTIONS [Digital twin builder in Real-Time Intelligence tutorial part 2: Get streaming data](https://raw.githubusercontent.com/microsoft/Digital-twin-builder-in-Real-Time-Intelligence/main/lab/tutorial-rti-2-get-streaming-data.md)
+
+===
+
+!INSTRUCTIONS [Digital twin builder in Real-Time Intelligence tutorial part 3: Build the ontology](https://raw.githubusercontent.com/microsoft/Digital-twin-builder-in-Real-Time-Intelligence/main/lab/tutorial-rti-3-build-ontology.md)
+
+===
+
+!INSTRUCTIONS [Digital twin builder in Real-Time Intelligence tutorial part 4: Project data to Eventhouse](https://raw.githubusercontent.com/microsoft/Digital-twin-builder-in-Real-Time-Intelligence/main/lab/tutorial-rti-4-project-eventhouse.md)
+
+===
+
+!INSTRUCTIONS [Digital twin builder in Real-Time Intelligence tutorial part 5: Query and visualize](https://raw.githubusercontent.com/microsoft/Digital-twin-builder-in-Real-Time-Intelligence/main/lab/tutorial-rti-5-query-and-visualize.md)
+
+===
+
+!INSTRUCTIONS [Digital twin builder in Real-Time Intelligence tutorial part 6: Clean up resources](https://raw.githubusercontent.com/microsoft/Digital-twin-builder-in-Real-Time-Intelligence/main/lab/tutorial-rti-6-clean-up-resources.md)

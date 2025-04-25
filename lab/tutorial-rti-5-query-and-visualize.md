@@ -164,8 +164,8 @@ Next, use a template file to populate your dashboard with tiles based on your KQ
 
 After a few minutes, the visuals populate with data from your database.
 
->[!TIP]
->The dashboard keeps the current time in UTC, so the time range selector might not match your local time. If you don't see data, expand the time range. 
+> [!TIP]
+> The dashboard keeps the current time in UTC, so the time range selector might not match your local time. If you don't see data, expand the time range. 
 
 Take some time to explore the dashboard. You can use the **Edit** and **Explore data** icons on each tile to view the underlying queries, experiment with changing the time range filters and other tile options, and try adding your own new queries and tiles.
 

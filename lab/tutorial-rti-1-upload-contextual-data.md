@@ -19,12 +19,13 @@ In this section, you upload a static file of bus stop data to the Tutorial lakeh
 
 2. In the lakehouse explorer page in Fabric, select **Get data** from the menu ribbon and choose **Upload files**.
 
-    :::image type="content" source="media/tutorial-rti/prep-get-data.png" alt-text="Screenshot of getting a local file for the Tutorial lakehouse.":::
+    ![Screenshot of getting a local file for the Tutorial lakehouse.](media/prep-get-data.png)
 
 3. Select the sample data file you downloaded and then select **Upload**. When the file is finished uploading, close the **Upload files** panel.
 
 4. In the **Explorer panel** on the left, select **Files**. Hover over the file name and select the ... that appears. Then select **Load to Tables** and **New table**.
 
+    ![Screenshot of Microsoft Fabric, selecting the Load to Tables option.](media/prep-new-table.png)
     :::image type="content" source="media/tutorial-rti/prep-new-table.png" alt-text="Screenshot of Microsoft Fabric, selecting the Load to Tables option.":::
 
 5. Name the table *stops_data*. Leave the other default settings and select **Load**.

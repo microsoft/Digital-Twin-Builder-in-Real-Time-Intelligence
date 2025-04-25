@@ -20,31 +20,32 @@ After defining entities, you can create *relationships* between them to define h
 First, create a new entity for the bus.
 1. In the semantic canvas of digital twin builder (preview), select **Add entity**.
 
-    :::image type="content" source="media/tutorial-rti/add-entity.png" alt-text="Screenshot of Add entity button.":::
+    ![Screenshot of the Add entity button.](media/add-entity.png)
 
 2. Leave the *Generic* system type selected, and enter *Bus* for the entity name. Select **Add entity**.
 3. After a few minutes, the *Bus* entity is now visible on the canvas.
 
-    :::image type="content" source="media/tutorial-rti/bus-entity.png" alt-text="Screenshot of Bus entity.":::
+    ![Screenshot of the Bus entity.](media/bus-entity.png)
 
 ### Map non-timeseries bus data
 
 Next, map some non-timeseries data to the Bus entity. These fields are static properties that identify a bus and its visit to a certain stop.
 1. In the **Entity configuration** panel, switch to the **Mappings** tab and select **Add data**.
 
-    :::image type="content" source="media/tutorial-rti/add-data.png" alt-text="Screenshot of adding a data mapping.":::
+    ![Screenshot of adding a data mapping.](media/add-data.png)
 
 2. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *Tutorial* lakehouse, and the *bus_data_processed* table.
-      
-    :::image type="content" source="media/tutorial-rti/bus-data-source.png" alt-text="Screenshot of the bus data source.":::
+
+    ![Screenshot of selecting the bus data source.](media/bus-data-source.png)      
 
     Select **Choose data source**.
+
 3. For the **Property type**, leave the default selection of **Non-timeseries properties**. 
 4. Under **Unique Id**, select the edit icon (shaped like a pencil) to choose a unique ID out of one or more columns from your source data. Digital twin builder uses this field to uniquely identify each row of ingested data.
 
     Select *TripId* as the unique ID column.
 
-    :::image type="content" source="media/tutorial-rti/bus-unique-id.png" alt-text="Screenshot of the bus unique ID.":::
+    ![Screenshot of the bus unique ID](media/bus-unique-id.png)
 
 5. Under **Mapped properties**, select the edit icon to choose which properties from your source data to map to the bus entity.
 
@@ -54,15 +55,15 @@ Next, map some non-timeseries data to the Bus entity. These fields are static pr
     
     Check the box to acknowledge that properties can't be renamed or removed, and select **Apply**.
 
-    :::image type="content" source="media/tutorial-rti/bus-map-properties-non-time.png" alt-text="Screenshot of the mapped non-timeseries bus properties.":::
+    ![Screenshot of the mapped non-timeseries bus properties.](media/bus-map-properties-non-time.png)
 
 6. **Save** the mapping.
 
-    :::image type="content" source="media/tutorial-rti/bus-save-non-time.png" alt-text="Screenshot of saving the bus non-time series mapping.":::
+    ![Screenshot of saving the bus non-time series mapping.](media/bus-save-non-time.png)
 
 7. Switch to the **Scheduling** tab and select **Run now** to apply the mapping.
 
-    :::image type="content" source="media/tutorial-rti/bus-run-now.png" alt-text="Screenshot of running the bus mapping.":::
+    ![Screenshot of running the bus mapping.](media/bus-run-now.png)
 
 ### Map time series bus data
 
@@ -70,7 +71,7 @@ Next, map some time series data to the Bus entity. These properties are streamed
 
 1. Switch back to the **Mappings** tab for the Bus entity and select **Add data** to add a new mapping.
 
-    :::image type="content" source="media/tutorial-rti/bus-add-data-time.png" alt-text="Screenshot of adding a new bus mapping.":::
+    ![Screenshot of adding a new bus mapping.](media/bus-add-data-time.png)
 
 2. Open **Select lakehouse table** to select a data source for your mapping. Again, select your tutorial workspace, the *Tutorial* lakehouse, and the *bus_data_processed* table. Select **Choose data source**.
 3. This time, switch the **Property type** to **Timeseries properties**.
@@ -86,7 +87,7 @@ Next, map some time series data to the Bus entity. These properties are streamed
     - TimeToNextStation
     - TripId
 
-    :::image type="content" source="media/tutorial-rti/bus-map-properties-time.png" alt-text="Screenshot of the mapped time series bus properties.":::
+    ![Screenshot of the mapped time series bus properties.](media/bus-map-properties-time.png)
 
 5. Check the box to acknowledge that properties can't be renamed or removed, and select **Apply**.
 6. Under **Link with entity property**, select the edit icon. 
@@ -95,7 +96,7 @@ Next, map some time series data to the Bus entity. These properties are streamed
 
 7. Make sure **Incremental mapping** is enabled and **Save** the mapping.
 
-    :::image type="content" source="media/tutorial-rti/bus-save-time.png" alt-text="Screenshot of saving the bus time series mapping.":::
+    ![Screenshot of saving the bus time series mapping.](media/bus-save-time.png)
 
 8. Switch to the **Scheduling** tab and select **Run now** to apply the mapping.
 
@@ -106,7 +107,7 @@ Next, create a second entity to represent a bus stop.
 2. Leave the *Generic* system type selected, and enter *Stop* for the entity name. Select **Add entity**.
 3. After a few minutes, the *Stop* entity is now visible on the canvas.
 
-    :::image type="content" source="media/tutorial-rti/stop-entity.png" alt-text="Screenshot of Stop entity.":::
+    ![Screenshot of the Stop entity.](media/stop-entity.png)
 
 ### Map non-timeseries stop data
 
@@ -131,11 +132,11 @@ Next, map some non-timeseries data to the Stop entity. The stop data doesn't con
     
     Check the box to acknowledge that properties can't be renamed or removed, and select **Apply**.
 
-    :::image type="content" source="media/tutorial-rti/stop-map-properties-non-time.png" alt-text="Screenshot of the mapped non-timeseries stop properties.":::
+    ![Screenshot of the mapped non-timeseries stop properties.](media/stop-map-properties-non-time.png)
 
 6. **Save** the mapping.
 
-    :::image type="content" source="media/tutorial-rti/stop-save-non-time.png" alt-text="Screenshot of saving the stop mapping.":::
+    ![Screenshot of saving the stop mapping.](media/stop-save-non-time.png)
 
 7. Switch to the **Scheduling** tab and select **Run now** to apply the mapping.
 
@@ -147,7 +148,7 @@ Next, create a relationship to represent that a Bus *goesTo* a Stop.
 
 1. In the semantic canvas, highlight the **Bus** entity and select **Add relationship**.
 
-    :::image type="content" source="media/tutorial-rti/add-relationship.png" alt-text="Screenshot of adding a relationship.":::
+    ![Screenshot of adding a relationship.](media/add-relationship.png)
 
 2. In the **Relationship configuration** panel, enter the following information:
     - **First entity**: Bus (filled automatically)
@@ -159,13 +160,13 @@ Next, create a relationship to represent that a Bus *goesTo* a Stop.
     
     Select **Create**.
 
-    :::image type="content" source="media/tutorial-rti/relationship-create.png" alt-text="Screenshot of the relationship configuration." lightbox="media/tutorial-rti/relationship-create.png":::
+    ![Screenshot of the relationship configuration.](media/relationship-create.png)
 
 3. In the **Scheduling** section that appears, select **Run now** to apply the relationship.
 
 Now your Bus and Stop entities are visible in the canvas with a relationship between them. Together, these elements form the ontology for the tutorial scenario.
 
-:::image type="content" source="media/tutorial-rti/ontology.png" alt-text="Screenshot of the ontology." lightbox="media/tutorial-rti/ontology-crop.png":::
+![Sreenshot of the ontology.](media/ontology.png)
 
 ## Verify mapping completion
 
@@ -173,11 +174,11 @@ As a final step, confirm that all your data mappings ran successfully.
 
 1. From the menu ribbon, select **Manage operations**.
 
-    :::image type="content" source="media/tutorial-rti/manage-operations.png" alt-text="Screenshot of selecting Manage operations.":::
+    ![Screenshot of selecting Manage operations.](media/manage-operations.png)
 
 2. View the details of the mapping operations, and confirm that they all completed successfully.
 
-    :::image type="content" source="media/tutorial-rti/manage-operations-2.png" alt-text="Screenshot of four completed operations.":::
+    ![Screenshot of four completed operations.](media/manage-operations-2.png)
 
     >[!TIP]
     > If any of the operations failed, check the box next to its name and select **Run now** to rerun it.

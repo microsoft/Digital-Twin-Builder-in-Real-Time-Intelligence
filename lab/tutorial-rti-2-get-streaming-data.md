@@ -16,17 +16,17 @@ Follow these steps to create the eventstream and add the Buses sample data as th
 
 2. From the menu ribbon, select **Get data** and choose **Eventstream > New eventstream**.
 
-    :::image type="content" source="media/tutorial-rti/prep-new-eventstream.png" alt-text="Screenshot of getting a new eventstream for the Tutorial database.":::
+    ![Screenshot of getting a new eventstream for the Tutorial database.](media/prep-new-eventstream.png)
 
 3. Name your eventstream *BusEventstream*. When the eventstream is finished creating, the eventstream opens.
 
 4. Select **Use sample data**.
 
-    :::image type="content" source="media/tutorial-rti/prep-use-sample-data.png" alt-text="Screenshot of selecting sample data for the eventstream.":::
+    ![Screenshot of selecting sample data for the eventstream.](media/prep-use-sample-data.png)
 
 5. In the **Add source** page, enter *BusDataSource* for the source name. Under **Sample data**, select *Buses*. Select **Add**.
 
-    :::image type="content" source="media/tutorial-rti/prep-buses.png" alt-text="Screenshot of selecting the bus sample data.":::
+    ![Screenshot of selecting the bus sample data.](media/prep-buses.png)
 
     When the new eventstream is ready, it opens in the authoring canvas.
 
@@ -38,13 +38,13 @@ Follow these steps to add the data transformation.
 
 1. Select the down arrow on the **Transform events or add destination** tile, then select the **Manage fields** predefined operation. The tile is renamed to *ManageFields*.
 
-    :::image type="content" source="media/tutorial-rti/prep-manage-fields.png" alt-text="Screenshot of selecting the Manage fields operation.":::
+    ![Screenshot of selecting the Manage fields operation.](media/prep-manage-fields.png)
     
 2. Select the edit icon (shaped like a pencil) on the *MangeFields* tile, which opens the **Manage fields** pane.
 3. Select **Add all fields**. This ensures that all fields from the source data are present through the transformation.
 4. Select the *Timestamp* field. Toggle **Change type** to *Yes*. For **Converted Type**, select *DateTime* from the dropdown list. For **Name**, enter the new name of *ActualTime*.
 
-    :::image type="content" source="media/tutorial-rti/prep-manage-fields-2.png" alt-text="Screenshot of changing the Timestamp field.":::
+    ![Screenshot of changing the Timestamp field.](media/prep-manage-fields-2.png)
     
 5. Without saving, select the *ScheduleTime* field. Toggle **Change type** to *Yes*. For **Converted Type**, select *DateTime* from the dropdown list. Leave the name as *ScheduleTime*. Now select **Save**.
 6. The **Manage fields** pane closes. The **ManageFields** tile continues to display an error until you connect it to a destination.
@@ -53,7 +53,7 @@ Follow these steps to add the data transformation.
 
 1. From the menu ribbon, select **Add destination**, then select **Eventhouse**.
 
-    :::image type="content" source="media/tutorial-rti/prep-add-destination.png" alt-text="Screenshot of selecting the eventhouse destination.":::
+    ![Screenshot of selecting the eventhouse destination.](media/prep-add-destination.png)
     
 2. Enter the following information in the **Eventhouse** pane:
 
@@ -73,11 +73,11 @@ Follow these steps to add the data transformation.
 6. From the menu ribbon, select **Publish**. The eventstream now begins sending the sample streaming data to your eventhouse.
 7. After some time, the **TutorialDestination** card in the eventstream view displays sample data in the **Data preview** tab. You might need to refresh the preview a few times while you wait for the data to arrive.
 
-    :::image type="content" source="media/tutorial-rti/prep-data-preview.png" alt-text="Screenshot of the preview data." lightbox="media/tutorial-rti/prep-data-preview.png":::
+    ![Screenshot of the preview data.](media/prep-data-preview.png)
 
 8. Verify that the data table is active in your eventhouse. Go to your *Tutorial* KQL database and refresh the view. It now contains a table called *bus_data_raw* which contains data.
 
-    :::image type="content" source="media/tutorial-rti/prep-bus-data-raw.png" alt-text="Screenshot of the bus_data_raw table with data.":::
+    ![Screenshot of the bus_data_raw table with data.](media/prep-bus-data-raw.png)
 
 ## Transform the data using update policies
 
@@ -90,7 +90,7 @@ Now that your bus streaming data is in a KQL database, you can use functions and
 Follow these steps to run the queries.
 1. From the *Tutorial* KQL database inside your eventhouse, select **Query with code** from the menu ribbon to open the KQL query editor.
 
-    :::image type="content" source="media/tutorial-rti/prep-query-with-code.png" alt-text="Screenshot of the Query with code button on the database.":::
+    ![Screenshot of the Query with code button on the database.](media/prep-query-with-code.png)
 
 2. Copy and paste the following code into the query editor. Run each code block in order.
 
@@ -129,25 +129,25 @@ Follow these steps to run the queries.
 3. Optionally, save the query tab as *Bus data processing* so you can identify it later.
 4. A new table is created in your database called *bus_data_processed*. After a few minutes, it begins to populate with the processed bus data.
 
-    :::image type="content" source="media/tutorial-rti/prep-bus-data-processed.png" alt-text="Screenshot of the bus_data_processed table with data." lightbox="media/tutorial-rti/prep-bus-data-processed.png":::
-
+    ![Screenshot of the bus_data_processed table with data.](media/prep-bus-data-processed.png)
+    
 ## Create lakehouse shortcut
 
 Finally, create a shortcut that makes the processed bus data available in the *Tutorial* lakehouse, which holds sample data for digital twin builder (preview). This step is necessary because digital twin builder requires its data source to be a lakehouse.
 
 1. Go to your *Tutorial* lakehouse, which you created in the previous tutorial section. From the menu ribbon, select **Get data** > **New shortcut**.
 
-    :::image type="content" source="media/tutorial-rti/prep-new-shortcut.png" alt-text="Screenshot of the New shortcut button.":::
+    ![Screenshot of the New shortcut button.](media/prep-new-shortcut.png)
 
 2. Under **Internal sources**, select **Microsoft OneLake**. Then, choose the *Tutorial* KQL database.
 3. Expand the list of **Tables** and check the box next to *bus_data_processed*. Select **Next**.
 4. Review your shortcut details and select **Create**.
 
-    :::image type="content" source="media/tutorial-rti/prep-new-shortcut-2.png" alt-text="Screenshot of creating the shortcut.":::
+    ![Screenshot of creating the shortcut.](media/prep-new-shortcut-2.png)
 
 5. The *bus_data_processed* table is now available in your lakehouse. The table has a latency of five minutes, so wait five minutes and then verify that it contains data.
 
-    :::image type="content" source="media/tutorial-rti/prep-bus-data-lakehouse.png" alt-text="Screenshot of bus_data_processed in the lakehouse." lightbox="media/tutorial-rti/prep-bus-data-lakehouse.png":::
+    ![Screenshot of the bus_data_processed table in the lakehouse.](media/prep-bus-data-lakehouse.png)
 
 Next, you use this lakehouse data as a source to build an ontology in digital twin builder (preview).
 

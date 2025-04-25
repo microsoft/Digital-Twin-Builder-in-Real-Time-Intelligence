@@ -71,3 +71,5 @@ In this tutorial, you complete the following steps to build out the bus data sce
 - Build an ontology in digital twin builder (preview)
 - Project the ontology data to Eventhouse by using a Fabric notebook
 - Create KQL queries and a Real-Time Dashboard to explore and visualize the data
+
+> Select **Next >** to go to the first exercise.

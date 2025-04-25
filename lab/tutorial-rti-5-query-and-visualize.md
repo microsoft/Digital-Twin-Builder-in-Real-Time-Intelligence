@@ -10,7 +10,7 @@ Begin in your *Tutorial_queryset* from the previous part of the lab.
 
 Using the **+** above the query pane, create the following new queries. (For more information about creating KQL queries, see [Query data in a KQL queryset](../kusto-query-set.md).)
 
-:::image type="content" source="media/tutorial-rti/kql-new-query.png" alt-text="Screenshot of a new KQL query." lightbox="media/tutorial-rti/kql-new-query.png":::
+![Screenshot of a new KQL query.](media/kql-new-query.png)
 
 ### Delay status
 
@@ -47,7 +47,7 @@ Bus_timeseries()
 
 Run the query and see the results.
 
-:::image type="content" source="media/tutorial-rti/kql-delay-status.png" alt-text="Screenshot of the Delay Status query results." lightbox="media/tutorial-rti/kql-delay-status.png":::
+![Screenshot of the Delay Status query results.](media/kql-delay-status.png)
 
 ### Delays by stop
 
@@ -79,7 +79,7 @@ delays
 
 Run the query and see the results.
 
-:::image type="content" source="media/tutorial-rti/kql-delays-by-stop.png" alt-text="Screenshot of the Delays by Stop query results." lightbox="media/tutorial-rti/kql-delays-by-stop.png":::
+![Screenshot of the Delays by Stop query results.](media/kql-delays-by-stop.png)
 
 ### Delays by bus and route
 
@@ -103,7 +103,7 @@ Bus_timeseries()
 
 Run the query and see the results.
 
-:::image type="content" source="media/tutorial-rti/kql-delays-by-bus-route.png" alt-text="Screenshot of the Delays by Bus Route query results." lightbox="media/tutorial-rti/kql-delays-by-bus-route.png":::
+![Screenshot of the Delays by Bus Route query results.](media/kql-delays-by-bus-route.png)
 
 ### Estimated lateness
 
@@ -125,7 +125,7 @@ Bus_timeseries()
 
 Run the query and see the results.
 
-:::image type="content" source="media/tutorial-rti/kql-estimated-lateness.png" alt-text="Screenshot of the Estimated lateness query results." lightbox="media/tutorial-rti/kql-estimated-lateness.png":::
+![Screenshot of the Estimated lateness query results.](media/kql-estimated-lateness.png)
 
 ## Visualize the data in a Real-Time dashboard
 
@@ -135,7 +135,7 @@ In this section, you use a template file to populate a Real-Time dashboard with 
 
 Here's what the dashboard looks like (notice the queries from the previous section: *Delay status*, *Delays by stop*, *Delays by bus and route*, and *Estimated lateness*):
 
-:::image type="content" source="media/tutorial-rti/real-time-dashboard.png" alt-text="Screenshot of the Real-Time Dashboard." lightbox="media/tutorial-rti/real-time-dashboard.png":::
+![Screenshot of the Real-Time Dashboard.](media/real-time-dashboard.png)
 
 ### Create a new dashboard
 
@@ -154,11 +154,11 @@ Next, use a template file to populate your dashboard with tiles based on your KQ
 4. Select **Save**.
 5. The template file populates the dashboard with multiple tiles, although the tiles can't get data because there's no connected data source yet.
 
-    :::image type="content" source="media/tutorial-rti/real-time-dashboard-errors.png" alt-text="Screenshot of the Real-Time Dashboard with errors.":::
+    ![Screenshot of the Real-Time Dashboard with errors.](media/real-time-dashboard-errors.png)
 
 6. From the **Manage** tab, select **Data sources**. This action opens the **Data sources** pane with a sample source for your data. Select the pencil icon to edit the BusData data source.
 
-    :::image type="content" source="media/tutorial-rti/real-time-dashboard-manage-data-sources.png" alt-text="Screenshot of managing data sources in the Real-Time Dashboard.":::
+    ![Screenshot of managing data sources in the Real-Time Dashboard.](media/real-time-dashboard-manage-data-sources.png)
 
 7. Choose your KQL database and select **Connect**. Select **Apply**, and close the **Data sources** pane.
 
@@ -169,7 +169,7 @@ After a few minutes, the visuals populate with data from your database.
 
 Take some time to explore the dashboard. You can use the **Edit** and **Explore data** icons on each tile to view the underlying queries, experiment with changing the time range filters and other tile options, and try adding your own new queries and tiles.
 
-:::image type="content" source="media/tutorial-rti/real-time-dashboard-explore.png" alt-text="Screenshot of exploration options in the Real-Time Dashboard." lightbox="media/tutorial-rti/real-time-dashboard-explore.png":::
+![Screenshot of exploration options in the Real-Time Dashboard.](media/real-time-dashboard-explore.png)
 
 With this visualization, the end-to-end lab for using digital twin builder (preview) with Real-Time Intelligence is complete. You used digital twin builder to contextualize sample bus data streamed from Real-Time Intelligence, then projected your ontology data to Eventhouse to enable further insights through KQL queries and a Real-Time dashboard.
 

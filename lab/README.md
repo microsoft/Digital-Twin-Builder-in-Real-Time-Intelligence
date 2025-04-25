@@ -39,7 +39,6 @@ This data set is real-time data that provides information about bus movements. I
 
 | Field | Description |
 |-------|-------------|
-|-------|-------------|
 | `Timestamp` | The time the data snapshot was taken (real-time system time). |
 | `TripId` | Unique identifier for each trip instance, like a specific bus run on a route. Useful for tracking individual bus journeys. |
 | `BusLine` | The route number, like 110 or 99. Useful for grouping trips and stops for pattern detection on specific lines. |
@@ -47,12 +46,11 @@ This data set is real-time data that provides information about bus movements. I
 | `ScheduleTime` | The scheduled time at which the bus should reach the next station on its route. Useful for calculating delays. |
 | `Properties` | JSON field that contains two values: `BusState` that can be `InMotion` or `Arrived` (indicates movement status), and `TimeToNextStation`, which is the estimated time remaining to reach the next stop. This JSON field column needs to be separated for use in digital twin builder (preview). |
 
-### Bustop data
+### Bus stop data
 
 This data set is dimensional data about bus stops. It provides contextual information about where the stops are located. This data is uploaded as a static file to the tutorial lakehouse.
 
 | Field | Description |
-|-------|-------------|
 |-------|-------------|
 | `Stop_Code` | Unique identifier for the bus stop. |
 | `Stop_Name` | The name of the bus stop, like *Abbey Wood Road*. |

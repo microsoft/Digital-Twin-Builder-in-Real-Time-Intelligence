@@ -2,7 +2,7 @@
 
 Now that your digital twin builder (preview) data is projected to an eventhouse, you can examine it with a KQL queryset and visualize it with a Real-Time Dashboard. In this part of the lab, you set up a KQL (Kusto Query Language) queryset with sample queries to extract insights from the data, then visualize these insights with a Real-Time dashboard.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+[!INCLUDE [Fabric feature-preview-note](../lab/includes/feature-preview-note.md)]
 
 ## Query the data using KQL
 
@@ -141,7 +141,7 @@ Here's what the dashboard looks like (notice the queries from the previous secti
 
 Start by creating an empty Real-Time dashboard in your Fabric workspace.
 
-[!INCLUDE [Real-Time Intelligence create-real-time-dashboard](../includes/create-real-time-dashboard.md)]
+[!INCLUDE [Real-Time Intelligence create-real-time-dashboard](../lab/includes/create-real-time-dashboard.md)]
 
 ### Upload template and connect data source
 

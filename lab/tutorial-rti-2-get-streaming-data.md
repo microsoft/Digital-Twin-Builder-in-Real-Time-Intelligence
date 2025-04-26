@@ -4,6 +4,8 @@ In this part of the tutorial, you set up another type of sample data: a real-tim
 
 ## Create an Eventhouse
 
+[!INCLUDE [Real-Time Intelligence create-eventhouse](../lab/includes/create-eventhouse.md)]
+
 ## Create an Eventstream
 
 In this section, you create an eventstream to send sample bus streaming data to the eventhouse.
@@ -18,13 +20,13 @@ Follow these steps to create the eventstream and add the Buses sample data as th
 
     ![Screenshot of getting a new eventstream for the Tutorial database.](media/prep-new-eventstream.png)
 
-3. Name your eventstream *BusEventstream*. When the eventstream is finished creating, the eventstream opens.
+3. Name your eventstream +++*BusEventstream*+++. When the eventstream is finished creating, the eventstream opens.
 
 4. Select **Use sample data**.
 
     ![Screenshot of selecting sample data for the eventstream.](media/prep-use-sample-data.png)
 
-5. In the **Add source** page, enter *BusDataSource* for the source name. Under **Sample data**, select *Buses*. Select **Add**.
+5. In the **Add source** page, enter +++*BusDataSource*+++ for the source name. Under **Sample data**, select *Buses*. Select **Add**.
 
     ![Screenshot of selecting the bus sample data.](media/prep-buses.png)
 
@@ -32,7 +34,7 @@ Follow these steps to create the eventstream and add the Buses sample data as th
 
 ### Transform data
 
-In this section, you add one transformation to the incoming sample data. This step casts the string fields `ScheduleTime` and `Timestamp` to DateTime type, and renames `Timestamp` to `ArrivalTime` for clarity. Timestamp fields need to be in DateTime format for digital twin builder to use them as time series data.
+In this section, you add one transformation to the incoming sample data. This step casts the string fields *ScheduleTime* and *Timestamp* to DateTime type, and renames *Timestamp* to *ArrivalTime* for clarity. Timestamp fields need to be in DateTime format for digital twin builder to use them as time series data.
 
 Follow these steps to add the data transformation. 
 
@@ -42,7 +44,7 @@ Follow these steps to add the data transformation.
     
 2. Select the edit icon (shaped like a pencil) on the *MangeFields* tile, which opens the **Manage fields** pane.
 3. Select **Add all fields**. This ensures that all fields from the source data are present through the transformation.
-4. Select the *Timestamp* field. Toggle **Change type** to *Yes*. For **Converted Type**, select *DateTime* from the dropdown list. For **Name**, enter the new name of *ActualTime*.
+4. Select the *Timestamp* field. Toggle **Change type** to *Yes*. For **Converted Type**, select *DateTime* from the dropdown list. For **Name**, enter the new name of +++*ActualTime*+++.
 
     ![Screenshot of changing the Timestamp field.](media/prep-manage-fields-2.png)
     
@@ -60,11 +62,11 @@ Follow these steps to add the data transformation.
     | Field | Value |
     | --- | --- |
     | **Data ingestion mode** | Event processing before ingestion |
-    | **Destination name** | *TutorialDestination* |
+    | **Destination name** | +++*TutorialDestination*+++ |
     | **Workspace** | Select the workspace in which you created your resources. |
     | **Eventhouse** | *Tutorial* |
     | **KQL Database** | *Tutorial* |
-    | **Delta table** | Create new - Enter *bus_data_raw* as the table name |
+    | **Delta table** | Create new - Enter +++*bus_data_raw*+++ as the table name |
     | **Input data format** | Json |
 
 3. Ensure that the box **Activate ingestion after adding the data source** is checked.
@@ -82,8 +84,8 @@ Follow these steps to add the data transformation.
 ## Transform the data using update policies
 
 Now that your bus streaming data is in a KQL database, you can use functions and a [Kusto update policy](/kusto/management/update-policy) to further transform the data. The transformations that you perform in this section prepare the data for use in digital twin builder (preview), and include the following actions:
-* Breaking apart the JSON field `Properties` into separate columns for each of its contained data items, `BusStatus` and `TimeToNextStation`. Digital twin builder doesn't have JSON parsing capabilities, so you need to separate these values before the data goes to digital twin builder.
-* Adding column `StopCode`, which is a unique key representing each bus stop. The purpose of this step is just to complete the sample data set to support this tutorial scenario. Joinable entities from separate data sources must contain a common column that digital twin builder can use to link them together, so this step adds a simulated set of int values that matches the `Stop_Code` field in the static bus stops data set. In the real world, related data sets already contain some kind of commonality.
+* Breaking apart the JSON field **Properties** into separate columns for each of its contained data items, **BusStatus** and **TimeToNextStation**. Digital twin builder doesn't have JSON parsing capabilities, so you need to separate these values before the data goes to digital twin builder.
+* Adding column **StopCode**, which is a unique key representing each bus stop. The purpose of this step is just to complete the sample data set to support this tutorial scenario. Joinable entities from separate data sources must contain a common column that digital twin builder can use to link them together, so this step adds a simulated set of int values that matches the **Stop_Code** field in the static bus stops data set. In the real world, related data sets already contain some kind of commonality.
 * Creating a new table called *bus_data_processed* that contains the transformed data.
 * Enabling mirroring for the new table, so that you can use a shortcut to access the data in your *Tutorial* lakehouse. 
 
@@ -109,7 +111,7 @@ Follow these steps to run the queries.
     .create table bus_data_processed (ActualTime:datetime, TripId:string, BusLine:string, StationNumber:string, ScheduleTime:datetime, BusState:string, TimeToNextStation:string, StopCode:int)
     ```    
 
-    ````kusto
+    ~~~kusto
     .alter table bus_data_processed policy update
     ```
     [{
@@ -120,11 +122,11 @@ Follow these steps to run the queries.
         "PropagateIngestionProperties": true
     }]
     ```
-    ````
+    ~~~
 
     ```kusto
     .alter-merge table bus_data_processed policy mirroring dataformat=parquet with (IsEnabled=true, TargetLatencyInMinutes=5)
-    ````
+    ```
 
 3. Optionally, save the query tab as *Bus data processing* so you can identify it later.
 4. A new table is created in your database called *bus_data_processed*. After a few minutes, it begins to populate with the processed bus data.

@@ -2,10 +2,10 @@
 
 In this part of the tutorial, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entities for the buses and stops. Then, you map the data from the *Tutorial* lakehouse to the entities, and define relationships between the entities to further contextualize the data.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+[!INCLUDE [Fabric feature-preview-note](../lab/includes/feature-preview-note.md)]
 
 <!--## Create new digital twin builder item in Fabric-->
-[!INCLUDE [Real-Time Intelligence create-digital-twin-builder](../includes/create-digital-twin-builder.md)]
+[!INCLUDE [Real-Time Intelligence create-digital-twin-builder](../lab/includes/create-digital-twin-builder.md)]
 
 In the semantic canvas, you can add entities and relationships to define an ontology.
 
@@ -13,7 +13,7 @@ In the semantic canvas, you can add entities and relationships to define an onto
 
 In digital twin builder (preview), an *entity* is a category that defines a concept within a domain-specific ontology. The entity definition serves as a blueprint for individual entity instances of that entity, and specifies common characteristics shared across all instances within that category. Here you define two entities for the sample scenario: Bus and Stop.
 
-After defining entities, you can create *relationships* between them to define how they're related to each other. In this tutorial, a Bus *goesTo* a Stop.
+After defining entities, you can create *relationships* between them to define how they're related to each other. In this lab, a Bus *goesTo* a Stop.
 
 ## Add Bus entity
 
@@ -22,7 +22,7 @@ First, create a new entity for the bus.
 
     ![Screenshot of the Add entity button.](media/add-entity.png)
 
-2. Leave the *Generic* system type selected, and enter *Bus* for the entity name. Select **Add entity**.
+2. Leave the *Generic* system type selected, and enter +++*Bus*+++ for the entity name. Select **Add entity**.
 3. After a few minutes, the *Bus* entity is now visible on the canvas.
 
     ![Screenshot of the Bus entity.](media/bus-entity.png)
@@ -155,7 +155,7 @@ Next, create a relationship to represent that a Bus *goesTo* a Stop.
         - **Property to join**: StopCode_static
     - **Second entity**: Stop
         - **Property to join**: Stop_Code
-    - **Relationship name**: Enter *goesTo*
+    - **Relationship name**: Enter +++*goesTo*+++
     - **Select relationship type**: Many Stop per Bus (1:N)
     
     Select **Create**.

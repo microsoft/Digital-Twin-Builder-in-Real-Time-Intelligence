@@ -107,9 +107,9 @@ Follow these steps to run the queries.
     }
     ```
 
-    ```kusto    
-    .create table bus_data_processed (ActualTime:datetime, TripId:string, BusLine:string, StationNumber:string, ScheduleTime:datetime, BusState:string, TimeToNextStation:string, StopCode:int)
-    ```    
+    ```kusto
+        .create table bus_data_processed (ActualTime:datetime, TripId:string, BusLine:string, StationNumber:string, ScheduleTime:datetime, BusState:string, TimeToNextStation:string, StopCode:int)
+    ```
 
     ~~~kusto
     .alter table bus_data_processed policy update

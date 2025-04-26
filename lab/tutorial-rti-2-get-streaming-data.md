@@ -4,7 +4,7 @@ In this part of the tutorial, you set up another type of sample data: a real-tim
 
 ## Create an Eventhouse
 
-[!INCLUDE [Real-Time Intelligence create-eventhouse](../includes/create-eventhouse.md)]
+[!INCLUDE [Real-Time Intelligence create-eventhouse](../lab/includes/create-eventhouse.md)]
 
 ## Create an Eventstream
 

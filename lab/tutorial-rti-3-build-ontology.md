@@ -2,10 +2,10 @@
 
 In this part of the tutorial, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entities for the buses and stops. Then, you map the data from the *Tutorial* lakehouse to the entities, and define relationships between the entities to further contextualize the data.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+[!INCLUDE [Fabric feature-preview-note](../lab/includes/feature-preview-note.md)]
 
 <!--## Create new digital twin builder item in Fabric-->
-[!INCLUDE [Real-Time Intelligence create-digital-twin-builder](../includes/create-digital-twin-builder.md)]
+[!INCLUDE [Real-Time Intelligence create-digital-twin-builder](../lab/includes/create-digital-twin-builder.md)]
 
 In the semantic canvas, you can add entities and relationships to define an ontology.
 

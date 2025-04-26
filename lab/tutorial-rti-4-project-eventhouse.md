@@ -2,7 +2,7 @@
 
 In this section of the lab, you project your digital twin builder (preview) ontology into Eventhouse using [Fabric notebooks](../../data-engineering/how-to-use-notebook.md). This step makes it possible to run KQL queries on your digital twin builder data for further analysis in Real-Time Intelligence.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+[!INCLUDE [Fabric feature-preview-note](../lab/includes/feature-preview-note.md)]
 
 During this lab section, you create shortcuts to bring your digital twin builder data from the lakehouse where it's stored into your *Tutorial* KQL database in Eventhouse. Then, you run a notebook code sample that generates a script to project organized views of your digital twin builder data in Eventhouse. The script creates user-defined functions in Eventhouse, one for each entity and property type in your digital twin builder ontology. Later, you can use these functions in KQL queries to access your organized digital twin builder ontology data from Eventhouse.
 

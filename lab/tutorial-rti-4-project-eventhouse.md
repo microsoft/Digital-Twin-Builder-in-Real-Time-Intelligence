@@ -51,7 +51,7 @@ First, prepare a Fabric notebook with the sample code to generate the Eventhouse
 
     ![Screenshot of adding the code to the notebook.](media/notebook-copy-in.png)
 
-5. Save the notebook with the name *DTB_Generate_Eventhouse_Projection*.
+5. Save the notebook with the name +++*DTB_Generate_Eventhouse_Projection*+++.
 
 > [!TIP]
 > Alternatively, you can import the sample notebook directly into your Fabric workspace, as described in [How to use Microsoft Fabric notebooks](../../data-engineering/how-to-use-notebook.md#import-existing-notebooks). If you do it this way instead of creating a new notebook from the lakehouse ribbon, make sure that the digital twin builder data lakehouse is set as the default data item for the notebook.
@@ -80,7 +80,7 @@ Next, install the Python package that the notebook needs to work with digital tw
 
 Next, run the rest of the notebook code to generate the Eventhouse projection script. This script creates user-defined functions in Eventhouse that correspond to your digital twin builder entities and their properties.
 
-1. In the second code block, there are variables for `dtb_item_name` and `kql_db_name`. Fill their values with the case-sensitive names of your digital twin builder item and *Tutorial* KQL database. Run the code block. The notebook confirms the successful run status with a checkmark underneath the code.
+1. In the second code block, there are variables for **dtb_item_name** and **kql_db_name**. Fill their values with the case-sensitive names of your digital twin builder item and *Tutorial* KQL database. Run the code block. The notebook confirms the successful run status with a checkmark underneath the code.
 
     ![Screenshot of running the second code block.](media/notebook-run-2.png)
 
@@ -111,7 +111,7 @@ Verify that the functions were created successfully in your KQL database.
 
     ![Screenshot of the functions in the KQL database.](media/kql-functions.png)
 
-3. Select **Tutorial_queryset** from the explorer panel to open the query window. Use the **+** above the query pane to create a new query, and enter `.show functions`. This displays a list of functions in the queryset, which you can expand to see their details.
+3. Select **Tutorial_queryset** from the explorer panel to open the query window. Use the **+** above the query pane to create a new query, and enter +++*.show functions*+++. This displays a list of functions in the queryset, which you can expand to see their details.
 
     ![Screenshot of the functions in the KQL queryset results.](media/kql-show-functions.png)
 

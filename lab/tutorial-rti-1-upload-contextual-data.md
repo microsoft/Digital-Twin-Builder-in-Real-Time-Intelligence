@@ -8,7 +8,7 @@ In this part of the tutorial, you set up the sample data lakehouse and upload th
 2. Select **+ New item**.
 3. In the **Filter by item type** search box, enter Lakehouse.
 4. Select the lakehouse item.
-5. Enter *Tutorial* as the lakehouse name.
+5. Enter +++*Tutorial*+++ as the lakehouse name.
 6. Select **Create**. When provisioning is complete, the lakehouse explorer page is shown.
 
 ## Upload static contextual data
@@ -27,7 +27,7 @@ In this section, you upload a static file of bus stop data to the Tutorial lakeh
 
     ![Screenshot of Microsoft Fabric, selecting the Load to Tables option.](media/prep-new-table.png)
 
-5. Name the table *stops_data*. Leave the other default settings and select **Load**.
+5. Name the table +++*stops_data*+++. Leave the other default settings and select **Load**.
 
 6. When the table is created, review your new *stops_data* table and verify that it contains data.
 

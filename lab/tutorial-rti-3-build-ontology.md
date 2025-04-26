@@ -13,7 +13,7 @@ In the semantic canvas, you can add entities and relationships to define an onto
 
 In digital twin builder (preview), an *entity* is a category that defines a concept within a domain-specific ontology. The entity definition serves as a blueprint for individual entity instances of that entity, and specifies common characteristics shared across all instances within that category. Here you define two entities for the sample scenario: Bus and Stop.
 
-After defining entities, you can create *relationships* between them to define how they're related to each other. In this tutorial, a Bus *goesTo* a Stop.
+After defining entities, you can create *relationships* between them to define how they're related to each other. In this lab, a Bus *goesTo* a Stop.
 
 ## Add Bus entity
 
@@ -22,7 +22,7 @@ First, create a new entity for the bus.
 
     ![Screenshot of the Add entity button.](media/add-entity.png)
 
-2. Leave the *Generic* system type selected, and enter *Bus* for the entity name. Select **Add entity**.
+2. Leave the *Generic* system type selected, and enter +++*Bus*+++ for the entity name. Select **Add entity**.
 3. After a few minutes, the *Bus* entity is now visible on the canvas.
 
     ![Screenshot of the Bus entity.](media/bus-entity.png)
@@ -155,7 +155,7 @@ Next, create a relationship to represent that a Bus *goesTo* a Stop.
         - **Property to join**: StopCode_static
     - **Second entity**: Stop
         - **Property to join**: Stop_Code
-    - **Relationship name**: Enter *goesTo*
+    - **Relationship name**: Enter +++*goesTo*+++
     - **Select relationship type**: Many Stop per Bus (1:N)
     
     Select **Create**.

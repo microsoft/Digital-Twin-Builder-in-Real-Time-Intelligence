@@ -1,6 +1,6 @@
 # Digital twin builder (preview) in Real-Time Intelligence lab part 3: Build the ontology
 
-In this part of the tutorial, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entities for the buses and stops. Then, you map the data from the *Tutorial* lakehouse to the entities, and define relationships between the entities to further contextualize the data.
+In this part of the lab, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entities for the buses and stops. Then, you map the data from the *Tutorial* lakehouse to the entities, and define relationships between the entities to further contextualize the data.
 
 [!INCLUDE [Fabric feature-preview-note](../lab/includes/feature-preview-note.md)]
 
@@ -23,7 +23,7 @@ First, create a new entity for the bus.
     ![Screenshot of the Add entity button.](media/add-entity.png)
 
 2. Leave the *Generic* system type selected, and enter +++*Bus*+++ for the entity name. Select **Add entity**.
-3. After a few minutes, the *Bus* entity is now visible on the canvas.
+3. The *Bus* entity is created and becomes visible on the canvas.
 
     ![Screenshot of the Bus entity.](media/bus-entity.png)
 
@@ -38,7 +38,7 @@ Next, map some non-timeseries data to the Bus entity. These fields are static pr
 
     ![Screenshot of selecting the bus data source.](media/bus-data-source.png)      
 
-    Select **Choose data source**.
+    You can wait for the data preview to load if you want, but you don't have to. Select **Choose data source** to confirm.
 
 3. For the **Property type**, leave the default selection of **Non-timeseries properties**. 
 4. Under **Unique Id**, select the edit icon (shaped like a pencil) to choose a unique ID out of one or more columns from your source data. Digital twin builder uses this field to uniquely identify each row of ingested data.
@@ -49,9 +49,15 @@ Next, map some non-timeseries data to the Bus entity. These fields are static pr
 
 5. Under **Mapped properties**, select the edit icon to choose which properties from your source data to map to the bus entity.
 
-    Leave **DisplayName** unmapped, and map the following properties:
-    - TripId as TripId_static
-    - StopCode as StopCode_static
+    The **Map properties** page lets you select a column from your source data on the left side, and map it to a new property on your entity on the right side. By default, selecting a column name from the source data on the left side fills in the right side automatically with a matching name for the entity property, but you can enter a new name for the property on the right side if you want the entity property to be named something different than what it's called in the source data.
+
+    The page loads with a *DisplayName* property for the entity, which is unmapped to any column in the source data. Leave the *DisplayName* property unmapped as it is, and select **Add entity property** to add new properties to the mapping.
+
+    ![Screenshot of the unmapped display name and adding an entity property.](media/bus-map-properties-non-time-1.png)
+
+    Map the following entity properties:
+    - Select **TripId** from the dropdown menu in the left column, and edit the box across from it in the right column to read *TripId_static*. This action creates a property on the bus entity named *TripId_static*, which gets its value from the **TripId** property in the source data.
+    - Select **StopCode** from the dropdown menu in the left column, and edit the box across from it in the right column to read *StopCode_static*. This action creates a property on the bus entity named *StopCode_static*, which gets its value from the **StopCode** property in the source data.
     
     Check the box to acknowledge that properties can't be renamed or removed, and select **Apply**.
 
@@ -77,8 +83,9 @@ Next, map some time series data to the Bus entity. These properties are streamed
 3. This time, switch the **Property type** to **Timeseries properties**.
 4. Under **Mapped Properties**, select the edit icon.
 
-    Map the following properties (use the default property names unless otherwise noted):
-    - ActualTime as Timestamp
+    The page loads with a *Timestamp* property for the entity, which is unmapped to any column in the source data. *Timestamp* requires a mapping, so select **ActualTime** from the corresponding dropdown menu on the left side. Then, select **Add entity property** to add new properties to the mapping.
+
+    Map the following properties. When you select these property names from the source columns on the left side, leave the default matching names that populate on the right side.
     - ScheduleTime
     - BusLine
     - StationNumber
@@ -90,15 +97,17 @@ Next, map some time series data to the Bus entity. These properties are streamed
     ![Screenshot of the mapped time series bus properties.](media/bus-map-properties-time.png)
 
 5. Check the box to acknowledge that properties can't be renamed or removed, and select **Apply**.
-6. Under **Link with entity property**, select the edit icon. 
+6. Next, link your time series data to this entity. This process requires you to select both an entity property and a column from your time series data table. The column selected from the time series data must **exactly** match data that is mapped to the selected entity property. This process ensures correct contextualization of your entity and time series data. 
+
+    Under **Link with entity property**, select the edit icon. 
 
     For **Choose entity property,** select *TripId_Static* from the dropdown menu. For **Select column from timeseries data...**, select *TripId*. Select **Apply**.
 
-7. Make sure **Incremental mapping** is enabled and **Save** the mapping.
+7. Make sure **Incremental mapping** is enabled and **Save** the mapping. Confirm when prompted.
 
     ![Screenshot of saving the bus time series mapping.](media/bus-save-time.png)
 
-8. Switch to the **Scheduling** tab and select **Run now** to apply the mapping.
+8. Switch to the **Scheduling** tab and select **Run now** under the new time series mapping to apply it.
 
 ## Add Stop entity
 
@@ -119,8 +128,9 @@ Next, map some non-timeseries data to the Stop entity. The stop data doesn't con
     Select **Choose data source**.
 3. For the **Property type**, leave the default selection of **Non-timeseries properties**. 
 4. For the **Unique Id**, select *Stop_Code*.
-5. For **Mapped properties**, map the following properties (use the default property names unless otherwise noted):
-    - Stop_Name as DisplayName
+5. For **Mapped properties**, map **Stop_Name** from the source data to the *DisplayName* property on the right side.
+
+    Then, add the following new properties to the mapping. When you select these property names from the source columns on the left side, leave the default matching names that populate on the right side.
     - Stop_Code
     - Road_Name
     - Borough
@@ -180,10 +190,9 @@ As a final step, confirm that all your data mappings ran successfully.
 
     ![Screenshot of four completed operations.](media/manage-operations-2.png)
 
-    > [!TIP]
-    > If any of the operations failed, check the box next to its name and select **Run now** to rerun it.
+3. If any of the operations failed, check the box next to its name and select **Run now** to rerun it.
 
-In the next part of the lab, you project the ontology you created to an eventhouse, to support further data analysis and visualization.
+Wait for all mappings to complete before you move on to the next part of the lab. In the next part of the lab, you project the ontology you created to an eventhouse, to support further data analysis and visualization.
 
 ## Next step
 > Select **Next >** to Project the ontology data to Eventhouse by using a Fabric notebook.

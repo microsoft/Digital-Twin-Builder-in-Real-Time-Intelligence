@@ -10,7 +10,7 @@ During this lab section, you create shortcuts to bring your digital twin builder
 
 Start by preparing your eventhouse and KQL database to access digital twin builder (preview) data. 
 
-Data from digital twin builder mappings is stored in a new lakehouse, with a name that looks like your digital twin builder item name followed by *dtdm*. The lakehouse is located in the root folder of your workspace. 
+Data from digital twin builder mappings is stored in a new lakehouse, with a name that looks like your digital twin builder item name followed by *dtdm*. For this tutorial, it's called *BusModeldtdm*. The lakehouse is located in the root folder of your workspace. 
 
 In this section, you add tables from your digital twin builder data lakehouse as external tables in the KQL database. Later, you run sample notebook code to set up an Eventhouse projection that runs on and organizes this data.
 
@@ -19,13 +19,13 @@ In this section, you add tables from your digital twin builder data lakehouse as
 
     ![Screenshot of creating the shortcut.](media/kql-onelake-shortcut.png)
 
-3. Under **Internal sources**, select **Microsoft OneLake**. Then, choose your digital twin builder data lakehouse (remember that the name looks like your digital twin builder item name followed by *dtdm*).
+3. Under **Internal sources**, select **Microsoft OneLake**. Then, choose *BusModeldtdm*.
 4. Expand the list of **Tables** and begin selecting all tables. There's a limit to the number of tables that you can add to a shortcut at once, so stop after you select 10 tables and see the warning message. Make a note of where you stopped.
 
     ![Screenshot of selecting the tables.](media/kql-onelake-shortcut-2.png)
 
 5. Select **Next** and **Create** to create the shortcuts.
-6. Repeat steps 2-5 twice more until all tables are added as shortcuts.
+6. Repeat the shortcut creation steps twice more, so that all tables are added as shortcuts
 7. When you're finished, you see all the external digital twin builder data tables under **Shortcuts** in the KQL database.
 
     ![Screenshot of the shortcuts available in the KQL database.](media/kql-shortcuts.png)
@@ -34,34 +34,34 @@ In this section, you add tables from your digital twin builder data lakehouse as
 
 Next, prepare a notebook to run the sample Eventhouse projection code on the digital twin builder data in the KQL database. In this step, you create a new notebook linked to your digital twin builder data, copy in the sample notebook code, and install the required Python package.
 
-### Create the notebook
+### Import the notebook
 
 First, prepare a Fabric notebook with the sample code to generate the Eventhouse projection.
 
-1. Download [DTB_Generate_Eventhouse_Projection.ipynb](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/real-time-intelligence) from the sample folder in GitHub.
-2. Go to your workspace, and open the digital twin builder data lakehouse (remember that the lakehouse is located in the root folder of your workspace, and the name looks like your digital twin builder item name followed by *dtdm*).
+1. Download *DTB_Generate_Eventhouse_Projection.ipynb* from the sample folder in GitHub: [digital-twin-builder](https://aka.ms/dtb-samples).
+2. Go to your workspace. From the menu ribbon, select **Import** > **Notebook** > **From this computer**.
 
-    ![Screenshot of selecting the lakehouse from a workspace.](media/lakehouse.png)
+    ![Screenshot of importing the notebook.](media/import-notebook.png)
 
-3. From the lakehouse, create a new notebook by selecting **Open notebook** > **New notebook**.
+    Upload the notebook file.
+3. The notebook is imported into your workspace. Select it from the workspace items to open it.
+4. From the **Explorer** pane of the notebook, select **Add data items** > **Existing data sources**.
 
-    ![Screenshot of creating a new notebook.](media/new-notebook.png)
+    ![Screenshot of adding data items to the notebook.](media/notebook-add-data-items.png)
 
-4. Copy the contents of the downloaded notebook file and paste them into your new notebook. We recommend separating the code sections into four code blocks like in the source file, for readability.
+5. Select the *BusModeldtdm* lakehouse and select **Connect**.
 
-    ![Screenshot of adding the code to the notebook.](media/notebook-copy-in.png)
+6. In the **Explorer** pane, select **...** next to the lakehouse name, and select **Set as default lakehouse**.
+    ![Screenshot of setting the lakehouse as the default lakehouse.](media/notebook-default-lakehouse.png)
 
-5. Save the notebook with the name +++*DTB_Generate_Eventhouse_Projection*+++.
-
-> [!TIP]
-> Alternatively, you can import the sample notebook directly into your Fabric workspace, as described in [How to use Microsoft Fabric notebooks](../../data-engineering/how-to-use-notebook.md#import-existing-notebooks). If you do it this way instead of creating a new notebook from the lakehouse ribbon, make sure that the digital twin builder data lakehouse is set as the default data item for the notebook.
+    If you want, you can remove the other lakehouse that was added by default to simplify the view.
 
 ### Upload and install the Python package 
 
 Next, install the Python package that the notebook needs to work with digital twin builder data. In this section, you upload the package to your lakehouse and install it in the notebook.
 
-1. Download [dtb_samples-0.1-py3-none-any.whl](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/real-time-intelligence) from the sample folder in GitHub.
-2. In the **Explorer** pane of your open notebook, expand the digital twin builder data lakehouse item. Select the three dots next to **Files**, and select **Upload** > **Upload files**.
+1. Download *dtb_samples-0.1-py3-none-any.whl* from the sample folder in GitHub: [digital-twin-builder](https://aka.ms/dtb-samples).
+2. In the **Explorer** pane of your open notebook, expand *BusModeldtdm*. Select **...** next to **Files**, and select **Upload** > **Upload files**.
 
     ![Screenshot of uploading a file to the lakehouse through the notebook view.](media/notebook-upload-files.png)
 
@@ -80,7 +80,7 @@ Next, install the Python package that the notebook needs to work with digital tw
 
 Next, run the rest of the notebook code to generate the Eventhouse projection script. This script creates user-defined functions in Eventhouse that correspond to your digital twin builder entities and their properties.
 
-1. In the second code block, there are variables for **dtb_item_name** and **kql_db_name**. Fill their values with the case-sensitive names of your digital twin builder item and *Tutorial* KQL database. Run the code block. The notebook confirms the successful run status with a checkmark underneath the code.
+1. In the second code block, there are variables for **dtb_item_name** and **kql_db_name**. Fill their values with *BusModel* and *Tutorial* (case-sensitive). Run the code block. The notebook confirms the successful run status with a checkmark underneath the code.
 
     ![Screenshot of running the second code block.](media/notebook-run-2.png)
 

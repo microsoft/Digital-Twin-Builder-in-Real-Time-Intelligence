@@ -1,10 +1,10 @@
 # Digital twin (preview) in Real-Time Intelligence lab part 1: Upload contextual data
 
-In this part of the tutorial, you set up the sample data lakehouse and upload the static sample data: a CSV file of bus stop data that provides contextual information about stop locations.
+In this part of the lab, you set up the sample data lakehouse and upload the static sample data: a CSV file of bus stop data that provides contextual information about stop locations.
 
 ## Create a lakehouse
 
-1. Browse to the workspace in which you want to create your tutorial resources. You must create all resources in the same workspace.
+1. Browse to the workspace in which you want to create your lab resources. You must create all resources in the same workspace.
 2. Select **+ New item**.
 3. In the **Filter by item type** search box, enter Lakehouse.
 4. Select the lakehouse item.
@@ -13,9 +13,9 @@ In this part of the tutorial, you set up the sample data lakehouse and upload th
 
 ## Upload static contextual data
 
-In this section, you upload a static file of bus stop data to the Tutorial lakehouse. The information in this file provides context about the locations of the bus stops along the bus routes.
+In this section, you upload a static file of bus stop data to the *Tutorial* lakehouse. The information in this file provides context about the locations of the bus stops along the bus routes.
 
-1. Download the stops_data.csv sample data file from the sample folder in GitHub: [digital-twin-builder-tutorial-bus](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/real-time-intelligence).
+1. Download the *stops_data.csv* sample data file from the sample folder in GitHub: [digital-twin-builder-tutorial-bus](https://aka.ms/dtb-samples-bus).
 
 2. In the lakehouse explorer page in Fabric, select **Get data** from the menu ribbon and choose **Upload files**.
 

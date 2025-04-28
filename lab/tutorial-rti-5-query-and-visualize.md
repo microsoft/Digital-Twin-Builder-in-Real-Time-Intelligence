@@ -8,7 +8,7 @@ Now that your digital twin builder (preview) data is projected to an eventhouse,
 
 Begin in your *Tutorial_queryset* from the previous part of the lab. 
 
-Using the **+** above the query pane, create the following new queries. (For more information about creating KQL queries, see [Query data in a KQL queryset](../kusto-query-set.md).)
+Using the **+** above the query pane, create the following new queries.
 
 ![Screenshot of a new KQL query.](media/kql-new-query.png)
 
@@ -148,11 +148,10 @@ Start by creating an empty Real-Time dashboard in your Fabric workspace.
 Next, use a template file to populate your dashboard with tiles based on your KQL queries from earlier.
 
 <!--Update sample link when new content is available-->
-1. Download the *dashboard-DTBdashboard.json* dashboard template from the sample folder in GitHub: [digital-twin-builder-tutorial-bus](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/real-time-intelligence)
+1. Download the *DTB+RTI_dashboard.json* dashboard template from the sample folder in GitHub: [digital-twin-builder/bus-scenario](https://aka.ms/dtb-samples-bus).
 2. In your Real-Time dashboard, select the **Manage** tab and **Replace with file**.
 3. Open the dashboard template file that you downloaded. Continue through the **migration warnings** that flag the template's placeholder values for the database and workspace ID.
-4. Select **Save**.
-5. The template file populates the dashboard with multiple tiles, although the tiles can't get data because there's no connected data source yet.
+4. The template file populates the dashboard with multiple tiles, although the tiles can't get data because there's no connected data source yet.
 
     ![Screenshot of the Real-Time Dashboard with errors.](media/real-time-dashboard-errors.png)
 
@@ -160,7 +159,7 @@ Next, use a template file to populate your dashboard with tiles based on your KQ
 
     ![Screenshot of managing data sources in the Real-Time Dashboard.](media/real-time-dashboard-manage-data-sources.png)
 
-7. Choose your KQL database and select **Connect**. Select **Apply**, and close the **Data sources** pane.
+7. Under **Database**, select the dropdown arrow and **Eventhouse / KQL Database**. Select the *Tutorial* KQL database and select **Connect**. Select **Apply**, and close the **Data sources** pane.
 
 After a few minutes, the visuals populate with data from your database.
 

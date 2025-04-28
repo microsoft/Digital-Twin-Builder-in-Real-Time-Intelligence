@@ -1,6 +1,6 @@
 # Digital twin builder (preview) in Real-Time Intelligence lab part 2: Get streaming data
 
-In this part of the tutorial, you set up another type of sample data: a real-time data stream of sample bus data that includes time series information about bus locations. You stream the sample data into an eventhouse, perform some transformations on the data, then create a shortcut to get the eventhouse data into the sample data lakehouse that you created in the previous section. Digital twin builder requires data to be in a lakehouse.
+In this part of the lab, you set up another type of sample data: a real-time data stream of sample bus data that includes time series information about bus locations. You stream the sample data into an eventhouse, perform some transformations on the data, then create a shortcut to get the eventhouse data into the sample data lakehouse that you created in the previous section. Digital twin builder requires data to be in a lakehouse.
 
 ## Create an Eventhouse
 
@@ -97,6 +97,7 @@ Follow these steps to run the queries.
 2. Copy and paste the following code into the query editor. Run each code block in order.
 
     ```kusto
+    // Set Columns
     .create-or-alter function extractBusData ()
     {
         bus_data_raw
@@ -108,10 +109,12 @@ Follow these steps to run the queries.
     ```
 
     ```kusto
+    // Create table
     .create table bus_data_processed (ActualTime:datetime, TripId:string, BusLine:string, StationNumber:string, ScheduleTime:datetime, BusState:string, TimeToNextStation:string, StopCode:int)
     ```
 
     ~~~kusto
+    // Load data into table
     .alter table bus_data_processed policy update
     ```
     [{
@@ -125,8 +128,14 @@ Follow these steps to run the queries.
     ~~~
 
     ```kusto
+    // Enable OneLake availability
     .alter-merge table bus_data_processed policy mirroring dataformat=parquet with (IsEnabled=true, TargetLatencyInMinutes=5)
     ```
+
+    >[!TIP]
+    >  You can also enable OneLake availability for the new table through the UI instead of using code. Select the table and toggle on **OneLake availability**.
+    >
+    > ![Screenshot of enabling OneLake availability in the UI.](media/enable-onelake-availability.png)
 
 3. Optionally, save the query tab as *Bus data processing* so you can identify it later.
 4. A new table is created in your database called *bus_data_processed*. After a few minutes, it begins to populate with the processed bus data.

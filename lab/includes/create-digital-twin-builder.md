@@ -7,5 +7,4 @@
     ![Screenshot of the Digital Twin Builder item.](../media/new-digital-twin-builder.png)
     
 4. Enter +++*BusModel*+++ as the name for your item and select **Create**. 
-5. Wait for your digital twin builder item to be created.
-6. Once your digital twin builder item is ready, it opens to the semantic canvas.
+5. Wait for your digital twin builder item to be created. Once your digital twin builder item is ready, it opens to the semantic canvas.

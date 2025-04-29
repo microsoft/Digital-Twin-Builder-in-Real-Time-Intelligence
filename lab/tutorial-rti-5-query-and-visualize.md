@@ -161,7 +161,7 @@ Next, use a template file to populate your dashboard with tiles based on your KQ
 
 7. Under **Database**, select the dropdown arrow and **Eventhouse / KQL Database**. Select the *Tutorial* KQL database and select **Connect**. Select **Apply**, and close the **Data sources** pane.
 
-After a few minutes, the visuals populate with data from your database.
+After a few seconds, the visuals populate with data from your database.
 
 > [!TIP]
 > The dashboard keeps the current time in UTC, so the time range selector might not match your local time. If you don't see data, expand the time range. 

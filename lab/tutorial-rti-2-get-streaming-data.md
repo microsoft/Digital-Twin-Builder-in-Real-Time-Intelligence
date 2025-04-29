@@ -12,7 +12,7 @@ In this section, you create an eventstream to send sample bus streaming data to 
 
 ### Add source
 
-Follow these steps to create the eventstream and add the Buses sample data as the source.
+Follow these steps to create the eventstream and add the *Buses* sample data as the source.
 
 1. From the **KQL databases** pane in the eventhouse, select the new **Tutorial** database.
 
@@ -20,7 +20,7 @@ Follow these steps to create the eventstream and add the Buses sample data as th
 
     ![Screenshot of getting a new eventstream for the Tutorial database.](media/prep-new-eventstream.png)
 
-3. Name your eventstream +++*BusEventstream*+++. When the eventstream is finished creating, the eventstream opens.
+3. Name your eventstream +++*BusEventstream*+++. When the eventstream is finished creating, it opens.
 
 4. Select **Use sample data**.
 
@@ -43,7 +43,7 @@ Follow these steps to add the data transformation.
     ![Screenshot of selecting the Manage fields operation.](media/prep-manage-fields.png)
     
 2. Select the edit icon (shaped like a pencil) on the *MangeFields* tile, which opens the **Manage fields** pane.
-3. Select **Add all fields**. This ensures that all fields from the source data are present through the transformation.
+3. Select **Add all fields**. This action ensures that all fields from the source data are present through the transformation.
 4. Select the *Timestamp* field. Toggle **Change type** to *Yes*. For **Converted Type**, select *DateTime* from the dropdown list. For **Name**, enter the new name of +++*ActualTime*+++.
 
     ![Screenshot of changing the Timestamp field.](media/prep-manage-fields-2.png)
@@ -73,7 +73,7 @@ Follow these steps to add the data transformation.
 4. Select **Save**.
 5. In the authoring canvas, select the **ManageFields** tile and drag the arrow to the **TutorialDestination** tile to connect them. This action resolves all error messages in the flow.
 6. From the menu ribbon, select **Publish**. The eventstream now begins sending the sample streaming data to your eventhouse.
-7. After some time, the **TutorialDestination** card in the eventstream view displays sample data in the **Data preview** tab. You might need to refresh the preview a few times while you wait for the data to arrive.
+7. After a few minutes, the **TutorialDestination** card in the eventstream view displays sample data in the **Data preview** tab. You might need to refresh the preview a few times while you wait for the data to arrive.
 
     ![Screenshot of the preview data.](media/prep-data-preview.png)
 
@@ -138,7 +138,7 @@ Follow these steps to run the queries.
     > ![Screenshot of enabling OneLake availability in the UI.](media/enable-onelake-availability.png)
 
 3. Optionally, save the query tab as *Bus data processing* so you can identify it later.
-4. A new table is created in your database called *bus_data_processed*. After a few minutes, it begins to populate with the processed bus data.
+4. A new table is created in your database called *bus_data_processed*. After a short wait, it begins to populate with the processed bus data.
 
     ![Screenshot of the bus_data_processed table with data.](media/prep-bus-data-processed.png)
     
@@ -156,7 +156,7 @@ Finally, create a shortcut that makes the processed bus data available in the *T
 
     ![Screenshot of creating the shortcut.](media/prep-new-shortcut-2.png)
 
-5. The *bus_data_processed* table is now available in your lakehouse. The table has a latency of five minutes, so wait five minutes and then verify that it contains data.
+5. The *bus_data_processed* table is now available in your lakehouse. The table has a latency of five minutes, so wait five minutes and then verify that it contains data (this might take a few minutes).
 
     ![Screenshot of the bus_data_processed table in the lakehouse.](media/prep-bus-data-lakehouse.png)
 

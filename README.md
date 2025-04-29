@@ -1,14 +1,20 @@
-# Project
+# Get Real with Real-Time Intelligence to Transform Data into Action
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+## Session Description
 
-As the maintainer of this project, please make a few updates:
+Harness the power of real-time analytics and digital twins to achieve critical operational tasks. In this lab, you'll learn how to transform physical systems into dynamic digital replicas, enhancing simulations and optimizing operations. Discover how to build end-to-end solutions for event-driven scenarios, streaming data, and data logs. These practical steps will empower you to drive smart decision-making and foster innovation within your organization.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+## Learning Outcomes
+
+In this session, you combine data from two data sources: real-time bus movement and timing details (fact data), and precise geographic and contextual bus stop data (dimensional data). Contextualizing the bus data in digital twin builder (preview) enables dynamic analysis and operational insights.
+
+In this lab you will learn how to:
+
+* Set up your environment and upload static, contextual sample data into a lakehouse
+* Process streaming data and get it into the lakehouse
+* Build an ontology in digital twin builder (preview)
+* Project the ontology data to Eventhouse by using a Fabric notebook
+* Create KQL queries and a Real-Time Dashboard to explore and visualize the data
 
 ## Contributing
 

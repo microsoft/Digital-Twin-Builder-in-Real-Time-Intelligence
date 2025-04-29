@@ -4,7 +4,7 @@ Digital twin builder (preview) is a new item within the Real-Time Intelligence w
 
 > [!INCLUDE Fabric feature-preview-note]
 
-In this tutorial, you learn how to set up a digital twin builder item and use it to build an ontology that contextualizes sample data streamed from an eventstream. After building the ontology in digital twin builder, you use a shortcut to expose the data in an eventhouse, and query it using KQL (Kusto Query Language) queries. These query results are then visualized in a Real-Time dashboard.
+In this lab, you learn how to set up a digital twin builder item and use it to build an ontology that contextualizes sample data streamed from an eventstream. After building the ontology in digital twin builder, you use shortcuts to expose the data in an eventhouse, and query it using KQL (Kusto Query Language) queries. These query results are then visualized in a Real-Time dashboard.
 
 ## Scenario
 
@@ -24,12 +24,12 @@ This data set is real-time data that provides information about bus movements. I
 
 | Field | Description |
 |-------|-------------|
-| `Timestamp` | The time the data snapshot was taken (real-time system time). |
-| `TripId` | Unique identifier for each trip instance, like a specific bus run on a route. Useful for tracking individual bus journeys. |
-| `BusLine` | The route number, like 110 or 99. Useful for grouping trips and stops for pattern detection on specific lines. |
-| `StationNumber` | The stop sequence within a trip (1 being the first stop). Useful for tracking how a bus progresses along a route. |
-| `ScheduleTime` | The scheduled time at which the bus should reach the next station on its route. Useful for calculating delays. |
-| `Properties` | JSON field that contains two values: `BusState` that can be `InMotion` or `Arrived` (indicates movement status), and `TimeToNextStation`, which is the estimated time remaining to reach the next stop. This JSON field column needs to be separated for use in digital twin builder (preview). |
+| **Timestamp** | The time the data snapshot was taken (real-time system time). |
+| **TripId** | The unique identifier for each trip instance, like a specific bus run on a route. Useful for tracking individual bus journeys. |
+| **BusLine** | The route number, like 110 or 99. Useful for grouping trips and stops for pattern detection on specific lines. |
+| **StationNumber** | The stop sequence within a trip (1 being the first stop). Useful for tracking how a bus progresses along a route. |
+| **ScheduleTime** | The scheduled time at which the bus should reach the next station on its route. Useful for calculating delays. |
+| **Properties** | A JSON field that contains two values: *BusState* that can be *InMotion* or *Arrived* (indicates movement status), and *TimeToNextStation*, which is the estimated time remaining to reach the next stop. This JSON field column needs to be separated for use in digital twin builder (preview). |
 
 ### Bus stop data
 
@@ -37,15 +37,15 @@ This data set is dimensional data about bus stops. It provides contextual inform
 
 | Field | Description |
 |-------|-------------|
-| `Stop_Code` | Unique identifier for the bus stop. |
-| `Stop_Name` | The name of the bus stop, like *Abbey Wood Road*. |
-| `Latitude` | The latitude of the bus stop. Useful for map visualizations or calculating distances between stops. |
-| `Longitude` | The longitude of the bus stop. Useful for map visualizations or calculating distances between stops. |
-| `Road_Name` | The road where the stop is located. Useful for identifying road-specific trends. |
-| `Borough` | The borough where the stop is located, like *Greenwich*. Useful for aggregation and geographical analysis. |
-| `Borough_ID` | A numerical ID for the borough. Could theoretically used for joining with borough-level datasets. |
-| `Suggested_Locality` | The neighborhood or local area the stop belongs to, like Abbey Wood. More granular than borough and helpful for local analysis. |
-| `Locality_ID` | A numerical identifier for the locality. |
+| **Stop_Code** | The unique identifier for the bus stop. |
+| **Stop_Name** | The name of the bus stop, like *Abbey Wood Road*. |
+| **Latitude** | The latitude of the bus stop. Useful for map visualizations or calculating distances between stops. |
+| **Longitude** | The longitude of the bus stop. Useful for map visualizations or calculating distances between stops. |
+| **Road_Name** | The road where the stop is located. Useful for identifying road-specific trends. |
+| **Borough** | The borough where the stop is located, like *Greenwich*. Useful for aggregation and geographical analysis. |
+| **Borough_ID** | A numerical ID for the borough. Could potentially be used for joining with borough-level datasets. |
+| **Suggested_Locality** | The neighborhood or local area the stop belongs to, like Abbey Wood. More granular than borough and helpful for local analysis. |
+| **Locality_ID** | A numerical identifier for the locality. |
 
 ## Tutorial steps
 

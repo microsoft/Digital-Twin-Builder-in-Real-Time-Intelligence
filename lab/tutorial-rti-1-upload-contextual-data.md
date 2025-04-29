@@ -6,7 +6,7 @@ In this part of the lab, you set up the sample data lakehouse and upload the sta
 
 1. Browse to the workspace in which you want to create your lab resources. You must create all resources in the same workspace.
 2. Select **+ New item**.
-3. In the **Filter by item type** search box, enter Lakehouse.
+3. In the **Filter by item type** search box, enter **Lakehouse**.
 4. Select the lakehouse item.
 5. Enter +++*Tutorial*+++ as the lakehouse name.
 6. Select **Create**. When provisioning is complete, the lakehouse explorer page is shown.
@@ -21,15 +21,15 @@ In this section, you upload a static file of bus stop data to the *Tutorial* lak
 
     ![Screenshot of getting a local file for the Tutorial lakehouse.](media/prep-get-data.png)
 
-3. Select the sample data file you downloaded and then select **Upload**. When the file is finished uploading, close the **Upload files** panel.
+3. Select the sample data file you downloaded and then select **Upload**. When the file is finished uploading, close the **Upload files** pane.
 
-4. In the **Explorer panel** on the left, select **Files**. Hover over the file name and select the ... that appears. Then select **Load to Tables** and **New table**.
+4. In the **Explorer pane** on the left, select **Files**. Hover over the file name and select the ... that appears. Then select **Load to Tables** and **New table**.
 
     ![Screenshot of Microsoft Fabric, selecting the Load to Tables option.](media/prep-new-table.png)
 
 5. Name the table +++*stops_data*+++. Leave the other default settings and select **Load**.
 
-6. When the table is created, review your new *stops_data* table and verify that it contains data.
+6. When the table is created, review your new **stops_data** table and verify that it contains data.
 
     ![Screenshot of the stops_data table with data.](media/prep-stops-data.png)
 

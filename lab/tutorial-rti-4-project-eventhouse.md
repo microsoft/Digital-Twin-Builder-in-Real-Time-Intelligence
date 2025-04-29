@@ -54,7 +54,7 @@ First, prepare a Fabric notebook with the sample code to generate the Eventhouse
 6. In the **Explorer** pane, select **...** next to the lakehouse name, and select **Set as default lakehouse**.
     ![Screenshot of setting the lakehouse as the default lakehouse.](media/notebook-default-lakehouse.png)
 
-    If you want, you can remove the other lakehouse that was added by default to simplify the view.
+    Optionally, remove the other lakehouse that was added by default to simplify the view.
 
 ### Upload and install the Python package 
 
@@ -65,7 +65,7 @@ Next, install the Python package that the notebook needs to work with digital tw
 
     ![Screenshot of uploading a file to the lakehouse through the notebook view.](media/notebook-upload-files.png)
 
-3. Upload the *.whl* file that you downloaded.
+3. Upload the *.whl* file.
 4. Close the **Upload files** pane and observe the new file in the **Files** pane for the lakehouse.
 
     ![Screenshot of the uploaded file in the lakehouse.](media/notebook-files.png)

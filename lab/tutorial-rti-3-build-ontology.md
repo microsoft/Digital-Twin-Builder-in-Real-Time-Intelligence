@@ -38,7 +38,7 @@ Next, map some non-timeseries data to the Bus entity. These fields are static pr
 
     ![Screenshot of selecting the bus data source.](media/bus-data-source.png)      
 
-    You can wait for the data preview to load if you want, but you don't have to. Select **Choose data source** to confirm.
+    Optionally, wait for the data preview to load. Select **Choose data source** to confirm.
 
 3. For the **Property type**, leave the default selection of **Non-timeseries properties**. 
 4. Under **Unique Id**, select the edit icon (shaped like a pencil) to choose a unique ID out of one or more columns from your source data. Digital twin builder uses this field to uniquely identify each row of ingested data.
@@ -86,13 +86,13 @@ Next, map some time series data to the Bus entity. These properties are streamed
     The page loads with a *Timestamp* property for the entity, which is unmapped to any column in the source data. *Timestamp* requires a mapping, so select **ActualTime** from the corresponding dropdown menu on the left side. Then, select **Add entity property** to add new properties to the mapping.
 
     Map the following properties. When you select these property names from the source columns on the left side, leave the default matching names that populate on the right side.
-    - ScheduleTime
-    - BusLine
-    - StationNumber
-    - StopCode
-    - BusState
-    - TimeToNextStation
-    - TripId
+    - **ScheduleTime**
+    - **BusLine**
+    - **StationNumber**
+    - **StopCode**
+    - **BusState**
+    - **TimeToNextStation**
+    - **TripId**
 
     ![Screenshot of the mapped time series bus properties.](media/bus-map-properties-time.png)
 
@@ -131,14 +131,14 @@ Next, map some non-timeseries data to the Stop entity. The stop data doesn't con
 5. For **Mapped properties**, map **Stop_Name** from the source data to the *DisplayName* property on the right side.
 
     Then, add the following new properties to the mapping. When you select these property names from the source columns on the left side, leave the default matching names that populate on the right side.
-    - Stop_Code
-    - Road_Name
-    - Borough
-    - Borough_ID
-    - Suggested_Locality
-    - Locality_ID
-    - Latitude
-    - Longitude
+    - **Stop_Code**
+    - **Road_Name**
+    - **Borough**
+    - **Borough_ID**
+    - **Suggested_Locality**
+    - **Locality_ID**
+    - **Latitude**
+    - **Longitude**
     
     Check the box to acknowledge that properties can't be renamed or removed, and select **Apply**.
 

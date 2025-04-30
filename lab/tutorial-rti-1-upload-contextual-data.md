@@ -2,6 +2,21 @@
 
 In this part of the lab, you set up the sample data lakehouse and upload the static sample data: a CSV file of bus stop data that provides contextual information about stop locations.
 
+## Create a workspace
+
+1. In the virtual machine, open a web browser and browse to +++https://app.fabric.microsoft.com+++.
+2. When prompted, sign in using the following credentials:
+   - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
+   - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
+
+3. Select **Workspaces** from the left navigation pane. Then select **+ New workspace**.
+
+    ![Screenshot showing how to create a new workspace in Real-Time Intelligence.](media/create-new-workspace.png)
+
+4. Enter a name for the workspace, such as +++TutorialWorkspace+++. Expand the **Advanced** option and make sure **Fabric Capacity** is selected then select **Apply** when done.
+
+     ![Screenshot showing how to create a new workspace in Real-Time Intelligence.](media/create-workspace-side-pane.png)
+
 ## Create a lakehouse
 
 1. Browse to the workspace in which you want to create your lab resources. You must create all resources in the same workspace.

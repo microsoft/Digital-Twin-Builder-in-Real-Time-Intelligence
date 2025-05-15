@@ -178,21 +178,23 @@ Now your Bus and Stop entities are visible in the canvas with a relationship bet
 
 ![Sreenshot of the ontology.](media/ontology.png)
 
-## Verify mapping completion
+## Check mapping status
 
-As a final step, confirm that all your data mappings ran successfully. 
+As a final step, check the status of your data mappings. Each mapping may take several minutes to complete. 
 
 1. From the menu ribbon, select **Manage operations**.
 
     ![Screenshot of selecting Manage operations.](media/manage-operations.png)
 
-2. View the details of the mapping operations, and confirm that they all completed successfully.
+2. View the status of the mapping operations, and confirm that they're queueued, running, or completed.
 
     ![Screenshot of four completed operations.](media/manage-operations-2.png)
 
 3. If any of the operations failed, check the box next to its name and select **Run now** to rerun it.
 
-Wait for all mappings to complete before you move on to the next part of the lab. In the next part of the lab, you project the ontology you created to an eventhouse, to support further data analysis and visualization.
+When all the mappings are completed, you have the full set of data available for the rest of the lab. However, you don't need to wait for that status to move on to the next step of the lab. The mappings can continue to run in the background and you can return to this **Manage operations** page to check their status at any time.
+
+In the next part of the lab, you project the ontology you created to an eventhouse, to support further data analysis and visualization.
 
 ## Next step
 > Select **Next >** to Project the ontology data to Eventhouse by using a Fabric notebook.

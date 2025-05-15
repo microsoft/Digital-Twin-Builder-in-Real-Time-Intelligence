@@ -12,6 +12,9 @@ Using the **+** above the query pane, create the following new queries.
 
 ![Screenshot of a new KQL query.](media/kql-new-query.png)
 
+>[!NOTE]
+> You only see complete data in the query results if all of your mapping operations from [step 3](tutorial-rti-3-build-ontology.md#check-mapping-status) are finished running. You can check the status of your mapping operations in the **Mapping operations** tab of digital twin builder (preview).
+
 ### Delay status
 
 This query calculates the delay of each bus trip, by comparing the current time and the time to the next station with the scheduled arrival time.
@@ -136,6 +139,9 @@ In this section, you use a template file to populate a Real-Time dashboard with 
 Here's what the dashboard looks like (notice the queries from the previous section: *Delay status*, *Delays by stop*, *Delays by bus and route*, and *Estimated lateness*):
 
 ![Screenshot of the Real-Time Dashboard.](media/real-time-dashboard.png)
+
+>[!NOTE]
+> You only see complete data in the dashboard if all of your mapping operations from [step 3](tutorial-rti-3-build-ontology.md#check-mapping-status) are finished running. You can check the status of your mapping operations in the **Mapping operations** tab of digital twin builder (preview).
 
 ### Create a new dashboard
 

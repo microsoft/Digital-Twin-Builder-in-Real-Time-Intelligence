@@ -1,0 +1,26 @@
+// Set Columns
+.create-or-alter function extractBusData ()
+{
+    bus_data_raw
+    | extend BusState = tostring(todynamic(Properties).BusState)
+        , TimeToNextStation = tostring(todynamic(Properties).TimeToNextStation)
+        , StopCode = toint(10000 + abs(((toint(BusLine) * 100) + toint(StationNumber)) % 750))
+    | project-away Properties
+}
+
+// Create table
+.create table bus_data_processed (ActualTime:datetime, TripId:string, BusLine:string, StationNumber:string, ScheduleTime:datetime, BusState:string, TimeToNextStation:string, StopCode:int)
+
+// Load data into table
+.alter table bus_data_processed policy update
+```
+[{
+    "IsEnabled": true,
+    "Source": "bus_data_raw",
+    "Query": "extractBusData",
+    "IsTransactional": false,
+    "PropagateIngestionProperties": true
+}]
+```
+// Enable OneLake availability
+.alter-merge table bus_data_processed policy mirroring dataformat=parquet with (IsEnabled=true, TargetLatencyInMinutes=5)

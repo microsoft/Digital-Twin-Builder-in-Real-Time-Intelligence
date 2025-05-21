@@ -1,0 +1,11 @@
+Bus_timeseries()
+// Compute when the bus will actually arrive at the next stop
+| extend PredictedArrival = PreciseTimestamp + totimespan(TimeToNextStation)
+// Classify "will be late" as a boolean
+| extend WillBeLate = PredictedArrival > todatetime(ScheduleTime) + 5m
+// Select final output columns
+| project
+    PreciseTimestamp,
+    StopCode,
+    PredictedArrival,
+    WillBeLate

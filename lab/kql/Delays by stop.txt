@@ -1,0 +1,21 @@
+// Compute delay for each event
+let delays = 
+  Bus_timeseries()
+  | extend TimeToNextStationSpan = totimespan(TimeToNextStation)
+  | extend PredictedArrival = PreciseTimestamp + TimeToNextStationSpan
+  | extend Delay = PredictedArrival - todatetime(ScheduleTime);
+// Join to Stop metadata
+delays
+| join kind=inner (
+    Stop_property()
+    | project Stop_Code, DisplayName, Borough, Suggested_Locality
+  ) on $left.StopCode == $right.Stop_Code
+// Aggregate
+| summarize
+    AvgDelayMinutes = avg(Delay)      // average timespan
+      / 1m,                           // convert to minutes
+    TotalRuns = count(),
+    LateRuns = countif(Delay > 5m)
+  by Stop_Code, DisplayName, Borough, Locality=Suggested_Locality
+| extend PercentLate = round((todouble(LateRuns) / TotalRuns * 100), 2)
+| order by AvgDelayMinutes desc

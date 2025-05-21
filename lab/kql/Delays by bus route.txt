@@ -1,0 +1,13 @@
+Bus_timeseries()
+| extend 
+    // inline compute delay minutes without a two‑step PredictedArrival alias
+    DelayMinutes = 
+      (
+        PreciseTimestamp 
+        + totimespan(TimeToNextStation)
+        - todatetime(ScheduleTime)
+      ) / 1m
+| summarize 
+    AvgDelayMin = round(avg(DelayMinutes), 0)    // round to whole minutes
+  by BusLine, StopCode
+| order by AvgDelayMin desc

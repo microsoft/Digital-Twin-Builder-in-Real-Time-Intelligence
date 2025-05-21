@@ -5,7 +5,14 @@ Once you finish the lab, you might want to delete all resources you created.
 [!INCLUDE [Fabric feature-preview-note](../lab/includes/feature-preview-note.md)]
 
 To delete the data from this lab, follow these steps:
-1. Delete your Fabric workspace, which also removes everything inside it. This action deletes the sample data lakehouse and eventhouse with the KQL database, the eventstream, the digital twin builder (preview) item and the associated lakehouse with all of its mapping and relationship data, the Fabric notebook, and the Real-Time dashboard.
+1. Delete your Fabric workspace, which also removes everything inside it, including:
+    * the sample data lakehouse 
+    * the eventhouse with the KQL database
+    * the eventstream
+    * the digital twin builder (preview) item
+        * the associated lakehouse with all of its mapping and relationship data
+    * the Fabric notebook
+    * the Real-Time dashboard
 
     ![Screenshot of removing the workspace.](media/remove-workspace.png)
 
